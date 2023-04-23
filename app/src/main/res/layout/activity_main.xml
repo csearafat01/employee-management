@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Employee Registration"
+            android:textSize="18sp"
+            android:layout_margin="3dp"
+            android:padding="10dp"
+            android:background="#704141"
+            android:textColor="#fff"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Basic Information"
+            android:layout_margin="3dp"
+            android:textStyle="bold"/>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ccc"
+            android:layout_margin="3dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="7dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/empNameInput"
+                android:hint="Enter employee name"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/empDobInput"
+                android:hint="Enter Date of Birth"
+                android:inputType="datetime"
+                android:onClick="showDatePicker"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/empEmailInput"
+                android:hint="Enter Email address"
+                android:inputType="textEmailAddress"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/empPhoneInput"
+                android:hint="Enter Mobile number"
+                android:inputType="phone"/>
+            <RadioGroup
+                android:id="@+id/genderRG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbMale"
+                    android:text="Male"
+                    android:checked="true"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbFemale"
+                    android:text="Female" />
+            </RadioGroup>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Employee type"
+            android:layout_margin="3dp"
+            android:textStyle="bold"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ccc"
+            android:layout_margin="3dp"/>
+        <RadioGroup
+            android:id="@+id/empTypeRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:orientation="vertical">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbTypeBaseSalariedEmployee"
+                android:text="Base Salaried Employee"
+                android:checked="true"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbTypeHourlySalariedEmployee"
+                android:text="Hourly Salaried Employee"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbTypeBasePlusCommissionedSalariedEmployee"
+                android:text="Base Plus Commissioned Salaried Employee"
+                />
+        </RadioGroup>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/baseSalaryInput"
+            android:hint="Enter base salary"
+            android:inputType="numberDecimal"
+            android:layout_margin="7dp"/>
+        <EditText
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hourlyRateInput"
+            android:hint="Enter Hourly Rate"
+            android:inputType="numberDecimal"
+            android:layout_margin="7dp"/>
+
+        <EditText
+            android:visibility="gone"
+            android:id="@+id/totalHourInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:hint="Enter Total Hour"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/commissionRateInput"
+            android:hint="Enter Commission Rate"
+            android:inputType="numberDecimal"
+            android:layout_margin="7dp"/>
+        <EditText
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/grossSaleInput"
+            android:hint="Enter Gross Sale"
+            android:inputType="numberDecimal"
+            android:layout_margin="7dp"/>
+        <Button
+            android:id="@+id/btn_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:onClick="registerNewEmployee"/>
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="Update"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:onClick="updateEmployee"/>
+    </LinearLayout>
+
+</ScrollView>
